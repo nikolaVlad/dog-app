@@ -1,21 +1,36 @@
 <template>
-  <div>radi</div>
+  <div class="container">
+    <div v-if="dogs.length" class="all-dogs-wrapper row">
+      <template v-for="dog of dogs" :key="dog.id">
+        <DogCard :dog = "dog" class="col"/>
+      </template>
+
+    </div>
+  </div>
 </template>
 
 <script>
-import { onMounted } from '@vue/runtime-core'
+import { onMounted, ref } from '@vue/runtime-core'
+import DogCard from '@/components/DogCard.vue'
 import axios from 'axios'
 export default {
   name: 'HomeView',
   setup () {
-    // const apiKey = '?api_key=live_rvw1WL8fCnFzHWM3cPuSNLzAJfIJOAhCRaEpvQNiXRXpLRbpelhhnNTdsZ0CKad4'
-    const url = 'https://thedogapi.com/v1/images'
-
-    onMounted(() => {
-      axios.get(url).then((res) => {
-        console.log(res)
-      })
+    const dogs = ref([])
+    onMounted(async () => {
+      const res = await axios.get(' http://localhost:3000/dogs')
+      dogs.value = res.data
     })
-  }
+
+    return { dogs }
+  },
+  components: { DogCard }
 }
 </script>
+
+<style scoped>
+  .all-dogs-wrapper
+  {
+    min-height: 100vh;
+  }
+</style>

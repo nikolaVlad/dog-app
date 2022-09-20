@@ -1,0 +1,35 @@
+body
+{
+  padding: 0px;
+  margin: 0px;
+}
+.full-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-container
+{
+  background-color: rgba(159, 159, 159, 0.307);
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col
+{
+  
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
