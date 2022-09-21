@@ -4,7 +4,6 @@
       <template v-for="dog of dogs" :key="dog.id">
         <DogCard :dog = "dog" class="col"/>
       </template>
-
     </div>
   </div>
 </template>
@@ -27,10 +26,3 @@ export default {
   components: { DogCard }
 }
 </script>
-
-<style scoped>
-  .all-dogs-wrapper
-  {
-    min-height: 100vh;
-  }
-</style>

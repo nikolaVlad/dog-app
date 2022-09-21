@@ -1,12 +1,12 @@
 <template>
-  <div class="card">
-    <div class="title">{{dog.name}}</div>
+  <div :class="['card', {'mini' : isMini}]">
+    <div class="title"><div class="txt">{{dog.name}}</div> <div @click="onClickMini" class="btn">{{isMini ? 'Card': 'Mini Card'}}</div></div>
     <div class="body">
-      <img class="image" width="200px" height="170" src="sad" />
+      <img :src="dog.image" />
       <div class="info">
         <div class="breed">Breed: {{dog.breed}}</div>
         <div class="registration">Registration: {{dog.registration}}</div>
-        <!-- <div class="birth">Birth date: {{dog.birthday}}</div> -->
+        <div class="birth">Birth date: {{dog.birthdate}}</div>
         <div class="timeline">Latest timeline activity: {{dog.timeline[dog.timeline.length - 1]}}</div>
       </div>
     </div>
@@ -14,16 +14,40 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
 export default {
-  props: ['dog']
+  props: ['dog'],
+
+  setup () {
+    const isMini = ref(false)
+    const onClickMini = () => {
+      isMini.value = !isMini.value
+    }
+
+    return { isMini, onClickMini }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
   .card{
+    &.mini
+    {
+      background: rgba(0, 0, 255, 0.389);
+      height: 220px;
+      min-width: 125px;
+      font-size: 13px;
+      img {
+        height: 130px;
+      }
+      .info
+      {
+        display: none;
+      }
+    }
 
     margin: 10px 20px;
-    height: 320px;
+    height: 360px;
     background: rgb(129, 201, 21);
     border-radius: 25px;
 
@@ -31,14 +55,33 @@ export default {
     font-weight: 500;
     text-align: left;
     padding: 20px;
+    min-width: 250px;
 
-    width: 100%;
+    img{
+      width:100%;
+      height:180px
+    }
 
     .title
     {
       text-align: center;
       margin-bottom: 15px;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+
+      .txt
+      {
+        width: 100%;
+      }
+      .btn{
+        margin-left: auto;
+        background: rgba(128, 128, 128, 0.314);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     }
 
     .body

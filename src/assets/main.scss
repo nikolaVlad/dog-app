@@ -17,12 +17,19 @@ body
   flex-direction: column;
 }
 
+
+.all-dogs-wrapper
+{
+  min-height: 100vh;
+}
+
 .row
 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
 
 .col
@@ -32,4 +39,5 @@ body
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  max-width: 300px;
 }

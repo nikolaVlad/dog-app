@@ -1,11 +1,11 @@
 <template>
   <div class="menu">
     <div class="menu-card">
-      <router-link to="/">All dogs</router-link>
+      <router-link active-class="active" to="/" exact-active-class="">All dogs</router-link>
     </div>
 
     <div class="menu-card">
-      <router-link to="/filter">Filters</router-link>
+      <router-link active-class="active" to="/filter">Filters</router-link>
     </div>
 
   </div>
@@ -16,6 +16,14 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+
+  .active
+  {
+    background: rgba(0, 0, 0, 0.115);
+    padding: 10px;
+    height: 100%;
+  }
+
   .menu{
     height: 90px;
     background: rgba(81, 81, 81, 0.177);
@@ -35,7 +43,7 @@ export default {}
       }
 
       &:hover{
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.399);
       }
     }
   }
