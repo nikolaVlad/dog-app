@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FilterView from '../views/FilterView.vue'
 import DogView from '../views/DogView.vue'
+import DogTimeline from '../views/DogTimeline.vue'
 
 const routes = [
   {
@@ -15,9 +16,14 @@ const routes = [
     component: FilterView
   },
   {
-    path: '/dog',
+    path: '/dog/:id',
     name: 'dog',
     component: DogView
+  },
+  {
+    path: '/dog-timeline/:id',
+    name: 'dogTimeline',
+    component: DogTimeline
   }
 ]
 

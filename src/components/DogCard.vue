@@ -1,7 +1,7 @@
 <template>
   <div :class="['card', {'mini' : isMini}]">
     <div class="title"><div class="txt">
-      <router-link to="/dog" > {{dog.name}}  </router-link>
+      <router-link :to="`/dog/${dog.id}`" > {{dog.name}}  </router-link>
     </div>
     <div @click="onClickMini" class="btn">  {{isMini ? 'Card': 'Mini Card'}}</div></div>
     <div class="body">
@@ -11,8 +11,12 @@
         <div class="registration">Registration: {{dog.registration}}</div>
         <div class="birth">Birth date: {{dog.birthdate}}</div>
         <div class="timeline">Latest timeline activity: {{dog.timeline[dog.timeline.length - 1]}}</div>
+
+        <div class="show-timeline">   <router-link  :to="`/dog-timeline/${dog.id}`" > Show timeline... </router-link> </div>
       </div>
+
     </div>
+
   </div>
 </template>
 
@@ -36,7 +40,7 @@ export default {
   .card{
     &.mini
     {
-      background: rgba(0, 0, 255, 0.389);
+      background: rgb(63, 125, 186);
       height: 220px;
       min-width: 125px;
       font-size: 13px;
@@ -46,12 +50,13 @@ export default {
       .info
       {
         display: none;
+
       }
     }
 
     margin: 10px 20px;
-    height: 360px;
-    background: rgb(129, 201, 21);
+    height: 390px;
+    background: rgb(85, 133, 13);
     border-radius: 25px;
 
     color:black;
@@ -77,6 +82,7 @@ export default {
       {
         width: 100%;
         color: green !important;
+        font-size: 1.1em;
         * {
           text-decoration: none !important;
           color: rgba(0, 0, 0, 0.873);
@@ -85,12 +91,18 @@ export default {
       }
       .btn{
         margin-left: auto;
-        background: rgba(128, 128, 128, 0.314);
+        background: rgba(128, 128, 128, 0.48);
         color: white;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 9px;
         cursor: pointer;
       }
+    }
+
+    .info
+    {
+      font-size: 0.9em;
+
     }
 
     .body
@@ -98,6 +110,21 @@ export default {
       .image
       {
         margin-bottom: 15px;
+      }
+      .show-timeline
+      {
+        margin-top: 10px;
+        *{
+          color: rgba(255, 255, 255, 0.704);
+        }
+
+        cursor: pointer;
+
+        &:hover
+        {
+          color: rgba(0, 242, 255, 0.543) !important;
+        }
+
       }
     }
   }
