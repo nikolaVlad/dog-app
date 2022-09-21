@@ -1,6 +1,9 @@
 <template>
   <div :class="['card', {'mini' : isMini}]">
-    <div class="title"><div class="txt">{{dog.name}}</div> <div @click="onClickMini" class="btn">{{isMini ? 'Card': 'Mini Card'}}</div></div>
+    <div class="title"><div class="txt">
+      <router-link to="/dog" > {{dog.name}}  </router-link>
+    </div>
+    <div @click="onClickMini" class="btn">  {{isMini ? 'Card': 'Mini Card'}}</div></div>
     <div class="body">
       <img :src="dog.image" />
       <div class="info">
@@ -73,6 +76,12 @@ export default {
       .txt
       {
         width: 100%;
+        color: green !important;
+        * {
+          text-decoration: none !important;
+          color: rgba(0, 0, 0, 0.873);
+        }
+
       }
       .btn{
         margin-left: auto;
