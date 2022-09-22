@@ -1,5 +1,5 @@
 <template>
-  Potrebno naoraviti timeline
+  <TimelineComponent v-if="dogTimeline.length > 0" :timeline="dogTimeline"/>
 </template>
 
 <script>
@@ -7,10 +7,9 @@ import { ref } from '@vue/reactivity'
 import { useRoute } from 'vue-router'
 import { onMounted } from '@vue/runtime-core'
 import axios from 'axios'
-import 'vue3-timeline/dist/style.css'
-import { Timeline, TimelineTitle, TimelineItem } from 'vue3-timeline'
+import TimelineComponent from '@/components/TimelineComponent.vue'
+
 export default {
-  components: [Timeline, TimelineTitle, TimelineItem],
   setup () {
     const route = useRoute()
     const dogTimeline = ref([])
@@ -23,14 +22,14 @@ export default {
         notFound.value = true
       }
       dogTimeline.value = res.data[0].timeline
-      console.log(dogTimeline.value)
     }
-
     onMounted(async () => {
       id.value = route.params.id || null
       await getDogTimeline()
     })
-  }
+    return { dogTimeline }
+  },
+  components: { TimelineComponent }
 }
 </script>
 

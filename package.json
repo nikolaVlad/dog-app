@@ -15,7 +15,9 @@
     "element-ui": "^2.15.10",
     "vue": "^3.2.13",
     "vue-axios": "^3.4.1",
+    "vue-cute-timeline": "^1.2.10",
     "vue-router": "^4.0.3",
+    "vue-simple-timeline": "^0.1.2",
     "vue3-timeline": "^1.2.3",
     "vuex": "^4.0.0"
   },

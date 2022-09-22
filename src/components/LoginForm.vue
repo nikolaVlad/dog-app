@@ -47,6 +47,7 @@ export default {
       }
       if (!password.value || password.value.length < 6) {
         error.value = errors.password
+        return
       }
 
       const user = await axios.get(`http://localhost:3000/users?username=${username.value}`)
