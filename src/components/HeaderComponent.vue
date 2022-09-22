@@ -32,7 +32,7 @@ export default {
   }
 
   .hero {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/dog-puppy_AJ99FPMUFL.jpg");
+    background-image: url("http://www.zooberza.com/oglasi_slike/77f02e5d-f41c-482d-9a7f-5b16d0325856.jpg");
     height: 35vh;
     background-position: center
     ;
