@@ -10,9 +10,9 @@
         <div class="breed">Breed: {{dog.breed}}</div>
         <div class="registration">Registration: {{dog.registration}}</div>
         <div class="birth">Birth date: {{dog.birthdate}}</div>
-        <div class="timeline">Latest timeline activity: {{dog.timeline[dog.timeline.length - 1]}}</div>
+        <div >Latest timeline activity: {{dog.timeline[dog.timeline.length - 1]}}</div>
 
-        <div class="show-timeline">   <router-link  :to="`/dog-timeline/${dog.id}`" > Show timeline... </router-link> </div>
+        <div v-if="role && role==='admin'" class="show-timeline">   <router-link  :to="`/dog-timeline/${dog.id}`" > Show timeline... </router-link> </div>
       </div>
 
     </div>
@@ -30,8 +30,9 @@ export default {
     const onClickMini = () => {
       isMini.value = !isMini.value
     }
+    const role = localStorage.getItem('role')
 
-    return { isMini, onClickMini }
+    return { isMini, onClickMini, role }
   }
 }
 </script>

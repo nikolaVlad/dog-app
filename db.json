@@ -1,4 +1,16 @@
   {
+    "users": [
+      {
+        "username": "martyMc",
+        "password": "1234567",
+        "role": "admin"
+      },
+      {
+        "username": "dockBr",
+        "password": "1234567",
+        "role": "user"
+      }
+    ],
     "dogs": [
       {
         "id": 0,

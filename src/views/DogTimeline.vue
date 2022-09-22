@@ -1,5 +1,5 @@
 <template>
-  <div>radi</div>
+  Potrebno naoraviti timeline
 </template>
 
 <script>
@@ -7,7 +7,10 @@ import { ref } from '@vue/reactivity'
 import { useRoute } from 'vue-router'
 import { onMounted } from '@vue/runtime-core'
 import axios from 'axios'
+import 'vue3-timeline/dist/style.css'
+import { Timeline, TimelineTitle, TimelineItem } from 'vue3-timeline'
 export default {
+  components: [Timeline, TimelineTitle, TimelineItem],
   setup () {
     const route = useRoute()
     const dogTimeline = ref([])

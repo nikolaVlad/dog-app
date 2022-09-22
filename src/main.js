@@ -6,4 +6,6 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import './assets/main.scss'
 
-createApp(App).use(store, axios, VueAxios).use(router).mount('#app')
+import ElementPlus from 'element-plus'
+
+createApp(App).use(store, axios, VueAxios, ElementPlus).use(router).mount('#app')
