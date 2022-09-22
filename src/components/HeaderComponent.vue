@@ -32,9 +32,10 @@ export default {
   }
 
   .hero {
-    background-image: url("https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    height: 30vh;
-    background-position: center bottom;
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/dog-puppy_AJ99FPMUFL.jpg");
+    height: 35vh;
+    background-position: center
+    ;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
