@@ -42,7 +42,7 @@ export default {
     &.mini
     {
       background: rgb(63, 125, 186);
-      height: 220px;
+      height: 290px;
       min-width: 125px;
       font-size: 13px;
       img {
@@ -56,7 +56,7 @@ export default {
     }
 
     margin: 10px 20px;
-    height: 390px;
+    height: 430px;
     background: rgb(85, 133, 13);
     border-radius: 25px;
 

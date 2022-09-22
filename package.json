@@ -19,6 +19,7 @@
     "vue-router": "^4.0.3",
     "vue-simple-timeline": "^0.1.2",
     "vue3-timeline": "^1.2.3",
+    "vuejs-paginate-next": "^1.0.2",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
