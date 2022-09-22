@@ -35,6 +35,7 @@ export default {
     }
 
     watch(page, () => {
+      window.scrollTo(0, 100)
       setPagination()
     })
 

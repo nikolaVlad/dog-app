@@ -68,7 +68,7 @@ export default {
         localStorage.setItem('role', user.data[0].role)
         role.value = localStorage.getItem('role')
         location.reload()
-      }, 2000)
+      }, 1100)
     }
 
     const logOut = () => {
